@@ -1,0 +1,287 @@
+/* Configurações Gerais / Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #FAF6F5; /* Creme Claro / Off-White */
+    color: #704241; /* Vinho / Borgonha Escuro */
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+}
+
+/* 1. Estilização da Dobra Principal (Hero) */
+.hero {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 80vh;
+    align-items: center;
+    padding: 40px 10%;
+    gap: 40px;
+}
+
+.hero-content {
+    flex: 1;
+    min-width: 300px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: #704241;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.hero-image {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(112, 66, 65, 0.15);
+}
+
+/* Botão de Conversão Rosé Chic */
+.btn-whatsapp {
+    background-color: #B88685; /* Rosé Chic */
+    color: #FFFFFF;
+    padding: 16px 32px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(184, 134, 133, 0.4);
+}
+
+.btn-whatsapp:hover {
+    background-color: #704241; /* Transiciona para Vinho */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(112, 66, 65, 0.4);
+}
+
+/* 2. Seção do Portfólio */
+.portfolio {
+    padding: 80px 10%;
+    text-align: center;
+}
+
+.portfolio h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.portfolio h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 2px;
+    background-color: #B88685;
+    margin: 10px auto 0;
+}
+
+.portfolio-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centraliza os itens caso falte algum */
+    gap: 30px;
+    width: 100%;
+}
+
+.portfolio-card {
+    background: #FFFFFF;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+    transition: transform 0.3s ease;
+    /* Altera o tamanho dinamicamente para ocupar o espaço irmão de forma justa */
+    flex: 1 1 calc(25% - 30px); 
+    min-width: 280px; /* Impede que o card fique esmagado em telas menores */
+    max-width: 100%;
+}
+.portfolio-card:hover {
+    transform: scale(1.03);
+}
+
+.portfolio-card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
+
+.portfolio-card h3 {
+    padding: 15px;
+    font-size: 1.2rem;
+    color: #704241;
+}
+
+/* ==========================================
+   3. RODAPÉ E DIFERENCIAIS (VERSÃO PREMIUM) 
+   ========================================== */
+.footer-differentials {
+    background-color: #FDFBFB; /* Um off-white ligeiramente mais quente */
+    border-top: 1px solid rgba(112, 66, 65, 0.08);
+    padding: 80px 10% 30px;
+}
+
+/* Container dos 5 Selos */
+.differentials-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+/* Cada Item/Selo Individual */
+.differential-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 12px;
+}
+
+/* Efeito sutil ao passar o mouse nos diferenciais */
+.differential-item:hover {
+    transform: translateY(-5px);
+    background-color: #FFFFFF;
+    box-shadow: 0 10px 25px rgba(112, 66, 65, 0.04);
+}
+
+/* Moldura Circular para os Ícones */
+.differential-item .icon {
+    font-size: 1.6rem;
+    width: 60px;
+    height: 60px;
+    line-height: 56px; /* Alinha o emoji perfeitamente no centro */
+    background-color: #FAF6F5; /* Cor Creme de fundo */
+    border: 1px solid rgba(184, 134, 133, 0.3); /* Borda fina em Rosé */
+    border-radius: 50%;
+    margin-bottom: 20px;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.differential-item:hover .icon {
+    background-color: #704241; /* Inverte para Vinho no hover */
+    border-color: #704241;
+    transform: rotate(360deg);
+    /* Se quiser que o emoji mude para branco no hover, precisaria ser um ícone SVG/Fonte, 
+       mas com emoji o fundo escuro já dá um destaque lindo! */
+}
+
+/* Títulos dos Diferenciais */
+.differential-item h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: #704241; /* Vinho */
+    margin-bottom: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* Textos de Descrição */
+.differential-item p {
+    font-size: 0.9rem;
+    color: #704241;
+    opacity: 0.75;
+    line-height: 1.5;
+    font-weight: 300;
+}
+
+/* Seção de Créditos (Linha Final do Rodapé) */
+/* Seção de Créditos (Tarja Preta no Final) */
+.footer-credits {
+    text-align: center;
+    background-color: #111111; /* Preto sofisticado / Grafite bem escuro */
+    padding: 20px 10%;
+    margin-top: 40px;
+    /* Faz a tarja ocupar toda a largura da tela, saindo do limite do padding do rodapé */
+    margin-left: -11.1%;
+    margin-right: -11.1%;
+    margin-bottom: -30px; 
+}
+
+.footer-credits p {
+    font-size: 0.8rem;
+    color: #FAF6F5; /* Letras no tom Creme Claro para máxima leitura */
+    opacity: 0.9;
+    letter-spacing: 1px;
+    text-transform: uppercase; /* Mantém o estilo minimalista em caixa alta */
+    font-weight: 400;
+}
+
+/* Ajuste rápido para garantir que a tarja fique perfeita no celular */
+@media (max-width: 768px) {
+    .footer-credits {
+        margin-left: -5.3%;
+        margin-right: -5.3%;
+        padding: 15px 5%;
+    }
+}
+/* Ajuste Fino de Responsividade para Telas Menores */
+@media (max-width: 768px) {
+    .footer-differentials {
+        padding: 60px 5% 30px;
+    }
+    .differentials-container {
+        gap: 20px;
+    }
+}
+/* Responsividade Básica para Celulares */
+@media (max-width: 768px) {
+    .hero {
+        padding: 40px 5%;
+        text-align: center;
+        flex-direction: column-reverse; /* Foto fica em cima do texto no mobile */
+    }
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+    .portfolio {
+        padding: 60px 5%;
+    }
+}
+
+.whatsapp-flutuante {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 20px;
+    right: 20px;
+    background-color: #B88685; /* Rosé Chic */
+    color: #FFFFFF;
+    border-radius: 50%;
+    
+    /* Flexbox garante centralização cirúrgica do ícone SVG */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    box-shadow: 0 4px 10px rgba(112, 66, 65, 0.3);
+    z-index: 1000;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    animation: pulsar 2s infinite;
+}
