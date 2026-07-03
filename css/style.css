@@ -550,3 +550,34 @@ footer h2, footer p, footer .location {
     transform: scale(1.1); /* Dá um leve zoom */
     background-color: #20ba5a; /* Tom de verde ligeiramente mais escuro */
 }
+
+/* Container para organizar os botões do rodapé */
+footer .whatsapp-footer, 
+footer .instagram-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 24px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 10px;
+    transition: background 0.3s ease;
+}
+
+/* Estilização exclusiva do botão do Instagram */
+footer .instagram-link {
+    background: #E1306C; /* Cor oficial do Instagram */
+    color: #ffffff !important;
+}
+
+footer .instagram-link:hover {
+    background: #b82354; /* Tom mais escuro para o efeito hover */
+}
+
+/* Garante que o botão do WhatsApp também herde o alinhamento correto */
+footer .whatsapp-footer {
+    background: #a36f63; /* Mantendo o tom rose/marrom que já está na imagem */
+    color: #ffffff !important;
+}
