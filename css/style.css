@@ -1,268 +1,528 @@
-/* Configurações Gerais / Reset */
+html {
+    scroll-behavior: smooth;
+}
+/* --- Reset & Variáveis Base (Paleta baseada na arte fornecida) --- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    background-color: #FAF6F5; /* Creme Claro / Off-White */
-    color: #704241; /* Vinho / Borgonha Escuro */
-    font-family: 'Montserrat', sans-serif;
-    overflow-x: hidden;
+:root {
+    --rose-bg: #F4E8E3;       /* Fundo suave rosado */
+    --rose-dark: #A66E65;     /* Tom principal rosé escuro */
+    --gold: #D4AF37;          /* Detalhes e ícones */
+    --text-dark: #3A2A27;     /* Texto principal em marrom elegante escuro */
+    --white: #FFFFFF;
+    --font-serif: 'Cormorant Garamond', serif;
+    --font-sans: 'Montserrat', sans-serif;
 }
 
-h1, h2, h3 {
-    font-family: 'Playfair Display', serif;
+html {
+    scroll-behavior: smooth;
 }
 
-/* 1. Estilização da Dobra Principal (Hero) */
-.hero {
+/* ==============================
+   Fundo Decorativo Desktop
+============================== */
+
+body{
+    background:#FAF6F4;
+    overflow-x:hidden;
+}
+
+.background-images{
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    pointer-events:none;
+}
+
+.background-images .bg{
+    position:absolute;
+    width:290px;
+    opacity:.12;
+    filter:grayscale(100%);
+    object-fit:cover;
+}
+
+/* esquerda superior */
+.bg1{
+    top:90px;
+    left:25px;
+    transform:rotate(-8deg);
+}
+
+/* esquerda inferior */
+.bg2{
+    bottom:40px;
+    left:25px;
+    transform:rotate(6deg);
+}
+
+/* direita superior */
+.bg3{
+    top:90px;
+    right:25px;
+    transform:rotate(8deg);
+}
+
+/* direita inferior */
+.bg4{
+    bottom:40px;
+    right:25px;
+    transform:rotate(-6deg);
+}
+
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- Ajuste Fino para Arte Vertical no Desktop --- */
+.top-banner-container {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    margin-top: 60px; /* <--- CORREÇÃO: Cria o espaço para o menu não cobrir a letra V */
+    line-height: 0;
+}
+.top-banner-container img {
+    width: 100%;
+    display: block;
+}
+
+/* --- Reposicionando o Menu Fixado no Topo da Página --- */
+.banner-nav {
+    position: fixed; /* O menu agora fica fixo no topo, independente da rolagem */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.95); /* Fundo branco sutil com transparência */
+    padding: 15px 5%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    z-index: 1000;
     display: flex;
-    flex-wrap: wrap;
-    min-height: 80vh;
+    justify-content: flex-end; /* Empurra os links para o canto direito da tela */
+}
+/* Botão de Destaque no Menu */
+.btn-nav {
+    background-color: var(--rose-dark);
+    color: var(--white) !important;
+    padding: 8px 20px;
+    border-radius: 20px;
+    text-shadow: none !important;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.btn-nav:hover {
+    background-color: var(--text-dark);
+}
+.logo h1 {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    color: var(--rose-dark);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
     align-items: center;
-    padding: 40px 10%;
-    gap: 40px;
 }
 
-.hero-content {
-    flex: 1;
-    min-width: 300px;
+nav ul li {
+    margin-left: 25px;
 }
 
-.hero-content h1 {
-    font-size: 3rem;
-    line-height: 1.2;
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 400;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--rose-dark);
+}
+
+.btn-nav {
+    background-color: var(--rose-dark);
+    color: var(--white) !important;
+    padding: 8px 18px;
+    border-radius: 20px;
+}
+
+.btn-nav:hover {
+    background-color: var(--text-dark);
+}
+
+/* --- Hero Section --- */
+.hero {
+    background: linear-gradient(rgba(58, 42, 39, 0.4), rgba(58, 42, 39, 0.4)), url('img/hero-bg.jpg') no-repeat center center/cover;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: var(--white);
+}
+
+.hero-content h2 {
+    font-family: var(--font-serif);
+    font-size: 3.5rem;
+    font-weight: 400;
     margin-bottom: 20px;
-    color: #704241;
 }
 
 .hero-content p {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     margin-bottom: 30px;
-    line-height: 1.6;
-    opacity: 0.9;
-}
-
-.hero-image {
-    flex: 1;
-    min-width: 300px;
-    display: flex;
-    justify-content: center;
-}
-
-.hero-image img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(112, 66, 65, 0.15);
-}
-
-/* Botão de Conversão Rosé Chic */
-.btn-whatsapp {
-    background-color: #B88685; /* Rosé Chic */
-    color: #FFFFFF;
-    padding: 16px 32px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 600;
-    display: inline-block;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(184, 134, 133, 0.4);
-}
-
-.btn-whatsapp:hover {
-    background-color: #704241; /* Transiciona para Vinho */
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(112, 66, 65, 0.4);
-}
-
-/* 2. Seção do Portfólio */
-.portfolio {
-    padding: 80px 10%;
-    text-align: center;
-}
-
-.portfolio h2 {
-    font-size: 2.5rem;
-    margin-bottom: 40px;
-    position: relative;
-}
-
-.portfolio h2::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 2px;
-    background-color: #B88685;
-    margin: 10px auto 0;
-}
-
-.portfolio-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* Centraliza os itens caso falte algum */
-    gap: 30px;
-    width: 100%;
-}
-
-.portfolio-card {
-    background: #FFFFFF;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
-    transition: transform 0.3s ease;
-    /* Altera o tamanho dinamicamente para ocupar o espaço irmão de forma justa */
-    flex: 1 1 calc(25% - 30px); 
-    min-width: 280px; /* Impede que o card fique esmagado em telas menores */
-    max-width: 100%;
-}
-.portfolio-card:hover {
-    transform: scale(1.03);
-}
-
-.portfolio-card img {
-    width: 100%;
-    height: 280px;
-    object-fit: cover;
-}
-
-.portfolio-card h3 {
-    padding: 15px;
-    font-size: 1.2rem;
-    color: #704241;
-}
-
-/* ==========================================
-   3. RODAPÉ E DIFERENCIAIS (VERSÃO PREMIUM) 
-   ========================================== */
-.footer-differentials {
-    background-color: #FDFBFB; /* Um off-white ligeiramente mais quente */
-    border-top: 1px solid rgba(112, 66, 65, 0.08);
-    padding: 80px 10% 30px;
-}
-
-/* Container dos 5 Selos */
-.differentials-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 40px;
-    text-align: center;
-    margin-bottom: 60px;
-}
-
-/* Cada Item/Selo Individual */
-.differential-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px 15px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-radius: 12px;
-}
-
-/* Efeito sutil ao passar o mouse nos diferenciais */
-.differential-item:hover {
-    transform: translateY(-5px);
-    background-color: #FFFFFF;
-    box-shadow: 0 10px 25px rgba(112, 66, 65, 0.04);
-}
-
-/* Moldura Circular para os Ícones */
-.differential-item .icon {
-    font-size: 1.6rem;
-    width: 60px;
-    height: 60px;
-    line-height: 56px; /* Alinha o emoji perfeitamente no centro */
-    background-color: #FAF6F5; /* Cor Creme de fundo */
-    border: 1px solid rgba(184, 134, 133, 0.3); /* Borda fina em Rosé */
-    border-radius: 50%;
-    margin-bottom: 20px;
-    display: inline-block;
-    transition: all 0.3s ease;
-}
-
-.differential-item:hover .icon {
-    background-color: #704241; /* Inverte para Vinho no hover */
-    border-color: #704241;
-    transform: rotate(360deg);
-    /* Se quiser que o emoji mude para branco no hover, precisaria ser um ícone SVG/Fonte, 
-       mas com emoji o fundo escuro já dá um destaque lindo! */
-}
-
-/* Títulos dos Diferenciais */
-.differential-item h4 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.2rem;
-    color: #704241; /* Vinho */
-    margin-bottom: 10px;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-}
-
-/* Textos de Descrição */
-.differential-item p {
-    font-size: 0.9rem;
-    color: #704241;
-    opacity: 0.75;
-    line-height: 1.5;
     font-weight: 300;
 }
 
-/* Seção de Créditos (Linha Final do Rodapé) */
-/* Seção de Créditos (Tarja Preta no Final) */
-.footer-credits {
+.btn-primary {
+    display: inline-block;
+    background-color: #25D366; /* Verde do WhatsApp para conversão rápida */
+    color: var(--white);
+    text-decoration: none;
+    padding: 15px 35px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 30px;
+    transition: transform 0.3s;
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+}
+
+/* --- Diferenciais (Features) --- */
+.features {
+    background-color: var(--rose-bg);
+    padding: 40px 0;
+}
+
+.features-grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.feature-item {
+    flex: 1;
+    min-width: 180px;
     text-align: center;
-    background-color: #111111; /* Preto sofisticado / Grafite bem escuro */
-    padding: 20px 10%;
-    margin-top: 40px;
-    /* Faz a tarja ocupar toda a largura da tela, saindo do limite do padding do rodapé */
-    margin-left: -11.1%;
-    margin-right: -11.1%;
-    margin-bottom: -30px; 
+    padding: 15px;
 }
 
-.footer-credits p {
-    font-size: 0.8rem;
-    color: #FAF6F5; /* Letras no tom Creme Claro para máxima leitura */
+.feature-item i {
+    font-size: 2rem;
+    color: var(--rose-dark);
+    margin-bottom: 10px;
+}
+
+.feature-item h3 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* --- Seção Sobre --- */
+.about {
+    padding: 80px 0;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-img img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 10px 10px 0px var(--rose-bg);
+}
+
+.subtitle {
+    text-transform: uppercase;
+    color: var(--rose-dark);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.about-text h2 {
+    font-family: var(--font-serif);
+    font-size: 2.8rem;
+    margin: 10px 0 20px 0;
+}
+
+.about-text p {
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+.highlight {
+    font-style: italic;
+    color: var(--rose-dark);
+    font-weight: 600;
+}
+
+/* --- Serviços --- */
+.services {
+    background-color: #FAF6F4;
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title h2 {
+    font-family: var(--font-serif);
+    font-size: 2.8rem;
+}
+
+.services-grid {
+    display: grid;
+    /* Altera o grid para criar 4 colunas de tamanhos iguais */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px; /* Espaço entre os cards */
+}
+
+/* IMPORTANTE: Para não quebrar no celular, adicione uma regra mobile */
+@media (max-width: 768px) {
+    .services-grid {
+        /* No celular, vira 1 coluna ou 2 colunas para ficar confortável */
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+@media (max-width: 480px) {
+    .services-grid {
+        grid-template-columns: 1fr; 
+    }
+}
+
+.service-card {
+    background-color: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    text-align: center;
+    padding-bottom: 20px;
+    transition: transform 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-img {
+    height: 250px; /* Altura um pouco menor para não alongar demais */
+    background-size: cover;
+    background-position: top center; /* Alinha o topo da imagem para não cortar a cabeça */
+    margin-bottom: 15px;
+}
+
+.service-card h3 {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+}
+
+/* --- Galeria --- */
+.gallery {
+    padding: 80px 0;
+}
+
+/* --- Ajustando a Galeria para 4 Colunas no Desktop --- */
+.gallery-grid {
+    display: grid;
+    /* Altera o grid para criar 4 colunas iguais no computador */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px; /* Mantém o mesmo espaçamento padrão entre as fotos */
+}
+
+/* Responsividade: Evita que as fotos espremam demais no celular */
+@media (max-width: 992px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 fotos por linha em tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-grid {
+        grid-template-columns: 1fr; /* 1 foto por linha em celulares pequenos */
+    }
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 5px;
+    transition: opacity 0.3s;
+}
+
+.gallery-item img:hover {
     opacity: 0.9;
-    letter-spacing: 1px;
-    text-transform: uppercase; /* Mantém o estilo minimalista em caixa alta */
-    font-weight: 400;
 }
 
-/* Ajuste rápido para garantir que a tarja fique perfeita no celular */
-@media (max-width: 768px) {
-    .footer-credits {
-        margin-left: -5.3%;
-        margin-right: -5.3%;
-        padding: 15px 5%;
-    }
+/* --- Rodapé --- */
+footer {
+    background-color: var(--text-dark);
+    color: var(--white);
+    text-align: center;
+    padding: 60px 0 20px 0;
 }
-/* Ajuste Fino de Responsividade para Telas Menores */
-@media (max-width: 768px) {
-    .footer-differentials {
-        padding: 60px 5% 30px;
-    }
-    .differentials-container {
-        gap: 20px;
-    }
+
+footer h2 {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    margin-bottom: 10px;
 }
-/* Responsividade Básica para Celulares */
-@media (max-width: 768px) {
-    .hero {
-        padding: 40px 5%;
-        text-align: center;
-        flex-direction: column-reverse; /* Foto fica em cima do texto no mobile */
-    }
-    .hero-content h1 {
-        font-size: 2.2rem;
-    }
-    .portfolio {
-        padding: 60px 5%;
-    }
+
+.location {
+    font-weight: 300;
+    margin-bottom: 35px;
+    letter-spacing: 1px;
 }
+
+.whatsapp-footer {
+    display: inline-block;
+    background-color: var(--rose-dark);
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-family: var(--font-serif);
+    padding: 15px 40px;
+    border-radius: 5px;
+    margin-bottom: 50px;
+    transition: background 0.3s;
+}
+
+.whatsapp-footer:hover {
+    background-color: #B87E75;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 20px;
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: #A69694;
+}
+
+/* --- Responsividade Básica --- */
+@media(max-width: 768px) {
+    nav { display: none; } /* Pode ser adaptado para menu hamburguer depois */
+    .hero-content h2 { font-size: 2.2rem; }
+    .about-grid { grid-template-columns: 1fr; }
+    .about-img { order: 2; }
+    .about-text { order: 1; }
+}
+
+/* Estilo base para os links do menu */
+.banner-nav a {
+    display: inline-block; /* Necessário para o efeito de escala funcionar bem */
+    text-decoration: none;
+    color: #333;
+    transition: transform 0.3s ease, color 0.3s ease; /* Transição suave */
+}
+
+/* Quando passa o mouse, o link expande 10% (1.1) do tamanho original */
+.banner-nav a:hover {
+    transform: scale(1.1);
+    color: #B3887A; /* Cor de destaque ao passar o mouse */
+}
+/* --- ESTILIZAÇÃO E EFEITOS DA SEÇÃO FEATURES --- */
+
+/* 1. Transformando cada item em um card elegante */
+.feature-item {
+    background-color: #ffffff; /* Fundo branco para destacar do fundo rosado */
+    padding: 30px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03); /* Sombra extremamente sutil */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+}
+
+/* Estilo do ícone */
+.feature-item i {
+    font-size: 2rem;
+    color: #B3887A; /* Tom rosé/marrom dos seus ícones */
+    margin-bottom: 15px;
+    display: inline-block;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Animação com leve "estilingue" */
+}
+
+/* Estilo do texto */
+.feature-item h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #333333;
+    margin: 0;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* 2. Efeito de Toque (Mobile) e Hover (Desktop) */
+.feature-item:hover, 
+.feature-item:active {
+    transform: translateY(-5px); /* O card flutua levemente para cima */
+    box-shadow: 0 10px 25px rgba(179, 136, 122, 0.15); /* A sombra aumenta e ganha o tom do seu projeto */
+    background-color: #FAF6F4; /* O fundo muda sutilmente para o tom areia */
+}
+
+/* O ícone ganha vida quando o card é focado/tocado */
+.feature-item:hover i,
+.feature-item:active i {
+    transform: scale(1.2) rotate(5deg); /* O ícone cresce e inclina levemente */
+}
+
+/* ==========================================================================
+   ESTILIZAÇÃO COMPLETA DO FOOTER (RODAPÉ COM TARJA PRETA COMPLETA)
+   ========================================================================== */
+
+/* Fundo geral do rodapé */
+footer {
+    background-color: #1a1a1a; /* Cinza escuro elegante */
+    color: #ffffff;
+    padding: 60px 0 0 0; /* Tira o espaçamento de baixo para colar a tarja */
+    text-align: center;
+}
+
+/* Força os textos principais a ficarem brancos */
+footer h2, footer p, footer .location {
+    color: #ffffff !important;
+}
+
+/* A TARJA PRETA CORRIGIDA: Ocupa toda a tela e é bem fina */
+.footer-bottom {
+    background-color: #000000; /* Preto absoluto */
+    width: 100%;               /* Força ocupar de ponta a ponta na tela */
+    margin-top: 40px;          /* Espaço entre os contatos e a tarja */
+    padding: 12px 0;           /* Deixa a tarja bem baixa e elegante */
+}
+
+/* Texto dentro da tarja preta */
+.footer-bottom p {
+    color: #888888 !important; /* Cinza discreto */
+    font-size: 0.8rem;         /* Letra menor e sofisticada */
+    margin: 0;
+    padding: 0 20px;           /* Proteção para o texto não colar na borda do celular */
+}
+
+/* ==========================================================================
+   BOTÃO FLUTUANTE DO WHATSAPP
+   ========================================================================== */
 
 .whatsapp-flutuante {
     position: fixed;
@@ -270,18 +530,23 @@ h1, h2, h3 {
     height: 60px;
     bottom: 20px;
     right: 20px;
-    background-color: #B88685; /* Rosé Chic */
-    color: #FFFFFF;
-    border-radius: 50%;
-    
-    /* Flexbox garante centralização cirúrgica do ícone SVG */
+    background-color: #25d366; /* Verde oficial do WhatsApp */
+    color: #fff !important;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 35px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 9999; /* Garante que ele fique em cima de absolutamente tudo */
     display: flex;
     align-items: center;
     justify-content: center;
-    
-    box-shadow: 0 4px 10px rgba(112, 66, 65, 0.3);
-    z-index: 1000;
-    transition: all 0.3s ease;
     text-decoration: none;
-    animation: pulsar 2s infinite;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Efeito ao passar o mouse (Desktop) ou tocar (Celular) */
+.whatsapp-flutuante:hover,
+.whatsapp-flutuante:active {
+    transform: scale(1.1); /* Dá um leve zoom */
+    background-color: #20ba5a; /* Tom de verde ligeiramente mais escuro */
 }
