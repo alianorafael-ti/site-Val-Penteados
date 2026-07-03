@@ -581,3 +581,13 @@ footer .whatsapp-footer {
     background: #a36f63; /* Mantendo o tom rose/marrom que já está na imagem */
     color: #ffffff !important;
 }
+
+/* Ajuste de responsividade para telas de celulares */
+@media (max-width: 768px) {
+    .service-card .service-img {
+        background-size: cover;       /* Faz a imagem preencher o espaço disponível */
+        background-position: center;  /* Centraliza o foco da foto para não cortar as laterais importantes */
+        height: 250px;                /* Define uma altura fixa confortável para a foto aparecer bem no celular */
+        width: 100%;                  /* Garante que ela ocupe toda a largura do card */
+    }
+}
