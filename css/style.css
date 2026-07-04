@@ -585,9 +585,9 @@ footer .whatsapp-footer {
 /* Ajuste de responsividade para telas de celulares */
 @media (max-width: 768px) {
     .service-card .service-img {
-        background-size: cover;       /* Mantém o preenchimento proporcional */
-        background-position: center 20%; /* Ajusta o foco para não degolar a cabeça nem cortar o queixo */
-        height: 250px;                /* Altura reduzida e ideal para telas menores não darem zoom forçado */
-        width: 100%;                  /* Garante 100% da largura do card */
+        background-size: cover !important;       /* Mantém o preenchimento proporcional */
+        background-position: center 20% !important; /* Ajusta o foco para não degolar a cabeça nem cortar o queixo */
+        height: 250px !important;                /* Altura reduzida e ideal para telas menores não darem zoom forçado */
+        width: 100% !important;                  /* Garante 100% da largura do card */
     }
 }
