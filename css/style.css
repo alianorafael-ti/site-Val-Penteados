@@ -586,8 +586,8 @@ footer .whatsapp-footer {
 @media (max-width: 768px) {
     .service-card .service-img {
         background-size: cover;       /* Faz a imagem preencher o espaço disponível */
-        background-position: center;  /* Centraliza o foco da foto para não cortar as laterais importantes */
-        height: 250px;                /* Define uma altura fixa confortável para a foto aparecer bem no celular */
+        background-position: center top; /* Centraliza nas laterais, mas alinha pelo topo na vertical */
+        height: 350px;                /* Define uma altura fixa confortável para a foto aparecer bem no celular */
         width: 100%;                  /* Garante que ela ocupe toda a largura do card */
     }
 }
