@@ -647,3 +647,11 @@ footer .whatsapp-footer {
 .convidada-img img {
     object-position: center 50%;
 }
+
+@media (max-width: 768px) {
+    .convidada-img img {
+        object-fit: contain;
+        object-position: center;
+        background: #fff;
+    }
+}
