@@ -341,10 +341,9 @@ nav ul li a:hover {
 .service-img {
     height: 250px;
     background-size: cover;
-    background-position: top center;
+    background-position: center top;
     margin-bottom: 15px;
 }
-
 .service-card h3 {
     font-family: var(--font-serif);
     font-size: 1.5rem;
