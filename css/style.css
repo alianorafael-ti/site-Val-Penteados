@@ -340,9 +340,16 @@ nav ul li a:hover {
 
 .service-img {
     height: 250px;
-    background-size: cover;
-    background-position: center top;
+    overflow: hidden;
     margin-bottom: 15px;
+}
+
+.service-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
 }
 
 @media (max-width: 768px) {
@@ -617,25 +624,22 @@ footer .whatsapp-footer {
 
 /* --- Card Horizontal - Madrinhas --- */
 
-.service-card-horizontal{
-    max-width: 700px;
-    margin: 30px auto 0;
-    background: var(--white);
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,.02);
-    text-align: center;
-    padding-bottom: 20px;
-    transition: transform 0.3s;
-}
-
-.service-card-horizontal:hover{
-    transform: translateY(-5px);
-}
-
-.service-card-horizontal .service-img{
+.service-card-horizontal .service-img {
     height: 320px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+}
+
+.service-card-horizontal .service-img img {
+    object-fit: contain;
+}
+
+@media (max-width:768px){
+
+    .service-img{
+        height:320px;
+    }
+
+    .service-card-horizontal .service-img{
+        height:280px;
+    }
+
 }
