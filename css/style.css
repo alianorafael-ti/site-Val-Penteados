@@ -643,3 +643,7 @@ footer .whatsapp-footer {
     }
 
 }
+
+.convidada-img img {
+    object-position: center 50%;
+}
