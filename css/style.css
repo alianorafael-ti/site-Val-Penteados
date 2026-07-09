@@ -347,8 +347,10 @@ nav ul li a:hover {
 
 @media (max-width: 768px) {
     .service-img {
-        height: 350px;
-        background-position: center top;
+        height: 450px !important;
+        background-size: contain !important;
+        background-repeat: no-repeat;
+        background-position: center center !important;
     }
 }
 .service-card h3 {
