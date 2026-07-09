@@ -291,21 +291,36 @@ nav ul li a:hover {
 
 .services-grid {
     display: grid;
-    /* Altera o grid para criar 4 colunas de tamanhos iguais */
-    grid-template-columns: repeat(4, 1fr); 
-    gap: 20px; /* Espaço entre os cards */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
 }
-
 /* IMPORTANTE: Para não quebrar no celular, adicione uma regra mobile */
 @media (max-width: 768px) {
     .services-grid {
-        /* No celular, vira 1 coluna ou 2 colunas para ficar confortável */
-        grid-template-columns: repeat(2, 1fr); 
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .service-card-horizontal {
+        max-width: 100%;
+        margin-top: 20px;
+    }
+
+    .service-card-horizontal .service-img {
+        height: 260px;
     }
 }
+
 @media (max-width: 480px) {
     .services-grid {
-        grid-template-columns: 1fr; 
+        grid-template-columns: 1fr;
+    }
+
+    .service-card-horizontal {
+        width: 100%;
+    }
+
+    .service-card-horizontal .service-img {
+        height: 220px;
     }
 }
 
@@ -324,9 +339,9 @@ nav ul li a:hover {
 }
 
 .service-img {
-    height: 250px; /* Altura um pouco menor para não alongar demais */
+    height: 250px;
     background-size: cover;
-    background-position: top center; /* Alinha o topo da imagem para não cortar a cabeça */
+    background-position: top center;
     margin-bottom: 15px;
 }
 
@@ -590,4 +605,29 @@ footer .whatsapp-footer {
         height: 250px !important;                /* Altura reduzida e ideal para telas menores não darem zoom forçado */
         width: 100% !important;                  /* Garante 100% da largura do card */
     }
+}
+
+/* --- Card Horizontal - Madrinhas --- */
+
+.service-card-horizontal{
+    max-width: 700px;
+    margin: 30px auto 0;
+    background: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,.02);
+    text-align: center;
+    padding-bottom: 20px;
+    transition: transform 0.3s;
+}
+
+.service-card-horizontal:hover{
+    transform: translateY(-5px);
+}
+
+.service-card-horizontal .service-img{
+    height: 320px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
