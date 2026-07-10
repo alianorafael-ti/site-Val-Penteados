@@ -273,94 +273,126 @@ nav ul li a:hover {
     font-weight: 600;
 }
 
-/* --- Serviços --- */
-.services {
-    background-color: #FAF6F4;
-    padding: 80px 0;
+/* =====================================================
+   SEÇÃO SERVIÇOS
+===================================================== */
+
+.services{
+    background:#FAF6F4;
+    padding:80px 0;
 }
 
-.section-title {
-    text-align: center;
-    margin-bottom: 50px;
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
 }
 
-.section-title h2 {
-    font-family: var(--font-serif);
-    font-size: 2.8rem;
+.section-title h2{
+    font-family:var(--font-serif);
+    font-size:2.8rem;
 }
 
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+/* GRID */
+
+.services-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
 }
-/* IMPORTANTE: Para não quebrar no celular, adicione uma regra mobile */
-@media (max-width: 768px) {
-    .services-grid {
-        grid-template-columns: repeat(2, 1fr);
+
+/* CARD PADRÃO */
+
+.service-card{
+    background:var(--white);
+    border-radius:8px;
+    overflow:hidden;
+    box-shadow:0 4px 15px rgba(0,0,0,.05);
+    text-align:center;
+    padding-bottom:20px;
+    transition:.3s;
+}
+
+.service-card:hover{
+    transform:translateY(-5px);
+}
+
+/* IMAGEM PADRÃO */
+
+.service-img{
+    overflow:hidden;
+    height:400px;
+}
+
+.service-img img{
+    width:100%;
+    height:100%;
+    display:block;
+    object-fit:cover;
+    object-position:center top;
+}
+
+/* TÍTULO */
+
+.service-card h3{
+    font-family:var(--font-serif);
+    font-size:1.5rem;
+    margin:18px 0 0;
+}
+
+/* =====================================================
+   CARD HORIZONTAL - MADRINHAS
+===================================================== */
+
+.service-card-horizontal{
+    grid-column:1 / -1;
+    max-width:380px;
+    justify-self:center;
+}
+
+.service-card-horizontal .service-img{
+    height:auto;
+    overflow:visible;
+}
+
+.service-card-horizontal .service-img img{
+    width:100%;
+    height:auto;
+    display:block;
+    object-fit:unset;
+}
+
+.service-card-horizontal h3{
+    margin-top:12px;
+    text-align:center;
+}
+
+/* =====================================================
+   RESPONSIVIDADE
+===================================================== */
+
+@media (max-width:768px){
+
+    .services-grid{
+        grid-template-columns:repeat(2,1fr);
     }
 
-    .service-card-horizontal {
-        max-width: 100%;
-        margin-top: 20px;
+    .service-img{
+        height:320px;
     }
 
-    .service-card-horizontal .service-img {
-        height: 260px;
-    }
-}
-
-@media (max-width: 480px) {
-    .services-grid {
-        grid-template-columns: 1fr;
+    .service-card-horizontal{
+        max-width:100%;
     }
 
-    .service-card-horizontal {
-        width: 100%;
+}
+
+@media (max-width:480px){
+
+    .services-grid{
+        grid-template-columns:1fr;
     }
 
-    .service-card-horizontal .service-img {
-        height: 220px;
-    }
 }
-
-.service-card {
-    background-color: var(--white);
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
-    text-align: center;
-    padding-bottom: 20px;
-    transition: transform 0.3s;
-}
-
-.service-card:hover {
-    transform: translateY(-5px);
-}
-
-.service-img {
-    height: 340px;
-    overflow: hidden;
-    margin-bottom: 15px;
-}
-
-.service-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center top;
-    display: block;
-}
-
-.service-card {
-    max-width: 320px;
-    margin: 0 auto;
-}
-.service-card h3 {
-    font-family: var(--font-serif);
-    font-size: 1.5rem;
-}
-
 /* --- Galeria --- */
 .gallery {
     padding: 80px 0;
@@ -618,27 +650,7 @@ footer .whatsapp-footer {
     }
 }
 
-/* --- Card Horizontal - Madrinhas --- */
 
-.service-card-horizontal .service-img {
-    height: 320px;
-}
-
-.service-card-horizontal .service-img img {
-    object-fit: contain;
-}
-
-@media (max-width:768px){
-
-    .service-img{
-        height:320px;
-    }
-
-    .service-card-horizontal .service-img{
-        height:280px;
-    }
-
-}
 
 @media (max-width: 768px) {
 
@@ -652,3 +664,4 @@ footer .whatsapp-footer {
     }
 
 }
+
