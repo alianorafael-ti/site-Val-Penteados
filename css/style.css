@@ -331,6 +331,10 @@ nav ul li a:hover {
     object-position:center top;
 }
 
+.convidada-img img{
+    object-position:center 20%;
+}
+
 /* TÍTULO */
 
 .service-card h3{
