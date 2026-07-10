@@ -652,16 +652,4 @@ footer .whatsapp-footer {
 
 
 
-@media (max-width: 768px) {
-
-    .convidada-img {
-        height: 420px;
-    }
-
-    .convidada-img img {
-        object-fit: cover;
-        object-position: center 50%;
-    }
-
-}
 
