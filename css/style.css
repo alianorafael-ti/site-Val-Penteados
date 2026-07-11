@@ -296,8 +296,12 @@ nav ul li a:hover {
 
 .services-grid{
     display:grid;
-    grid-template-columns: repeat(4, minmax(180px, 1fr));
-    gap:20px;
+    grid-template-columns: repeat(3, 1fr);
+    gap:30px;
+}
+
+.services .container{
+    max-width:1400px;
 }
 
 /* CARD PADRÃO */
@@ -334,6 +338,14 @@ nav ul li a:hover {
     object-position:center 20%;
 }
 
+.noiva-img img{
+    width:110%;
+    height:100%;
+    max-width:none;
+    object-fit:cover;
+    margin-left:-5%;
+}
+
 /* TÍTULO */
 
 .service-card h3{
@@ -368,6 +380,8 @@ nav ul li a:hover {
     margin-top:12px;
     text-align:center;
 }
+
+
 
 /* =====================================================
    RESPONSIVIDADE
