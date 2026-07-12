@@ -360,7 +360,7 @@ nav ul li a:hover {
 
 .service-card-horizontal{
     grid-column:1 / -1;
-    max-width:380px;
+    max-width:480px;
     justify-self:center;
 }
 
@@ -384,30 +384,75 @@ nav ul li a:hover {
 
 
 /* =====================================================
-   RESPONSIVIDADE
+   RESPONSIVIDADE SERVIÇOS
 ===================================================== */
 
 @media (max-width:768px){
 
-    .services-grid{
-        grid-template-columns:repeat(2,1fr);
+    .services .container{
+        width:100%;
+        padding:0 15px;
     }
-
-    .service-img{
-        height: 800px !important;
-    }
-
-    .service-card-horizontal{
-        max-width:100%;
-    }
-
-}
-
-@media (max-width:480px){
 
     .services-grid{
         grid-template-columns:1fr;
+        gap:25px;
     }
+
+
+    .service-card{
+        width:100%;
+    }
+
+
+    .service-img{
+        height:400px;
+    }
+
+
+    .service-img img{
+        width:100%;
+        height:100%;
+        object-fit:contain;
+    }
+
+
+    /* Corrige imagem da noiva no mobile */
+    .noiva-img img{
+        width:100%;
+        margin-left:0;
+        max-width:100%;
+    }
+
+
+    /* Card Madrinhas */
+    .service-card-horizontal{
+        grid-column:auto;
+        width:100%;
+        max-width:100%;
+    }
+
+
+    .madrinhas-card{
+        width:100%;
+        max-width:100%;
+    }
+
+
+}
+
+
+@media (max-width:480px){
+
+    .section-title h2{
+        font-size:2.2rem;
+    }
+
+
+    .service-img{
+        height:350px;
+    }
+
 
 }
 /* --- Galeria --- */
@@ -421,6 +466,39 @@ nav ul li a:hover {
     /* Altera o grid para criar 4 colunas iguais no computador */
     grid-template-columns: repeat(4, 1fr); 
     gap: 20px; /* Mantém o mesmo espaçamento padrão entre as fotos */
+}
+/* =====================================================
+   GALERIA - PADRÃO SERVIÇOS
+===================================================== */
+
+.gallery-item{
+    overflow:hidden;
+    height:550px;
+    border-radius:8px;
+}
+
+.gallery-item img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    background-color:#f5f5f5;
+}
+/* TESTE AJUSTE INDIVIDUAL GALERIA */
+
+.penteado1-card img{
+    transform:scale(1.55);
+}
+
+.penteado2-card img{
+    transform:scale(1.40);
+}
+
+.penteado3-card img{
+    transform:scale(1.75);
+}
+
+.penteado4-card img{
+    transform:scale(1.50);
 }
 
 /* Responsividade: Evita que as fotos espremam demais no celular */
@@ -672,6 +750,40 @@ footer .whatsapp-footer {
         width: 100% !important;                  /* Garante 100% da largura do card */
     }
 }
+.madrinhas-card .service-img img{
+    width:100%;
+    height:auto;
+    display:block;
+}
+/* AJUSTE EXCLUSIVO CARD MADRINHAS */
+
+.madrinhas-card{
+    width:600px;
+    max-width:100%;
+}  @media (max-width:768px){
+
+    .services-grid{
+        grid-template-columns:1fr !important;
+    }
+
+    .services{
+        overflow-x:hidden;
+    }
+
+    .service-card{
+        width:100% !important;
+        max-width:100% !important;
+    }
+
+    .madrinhas-card{
+        width:100% !important;
+    }
+
+}
+
+
+
+
 
 
 
